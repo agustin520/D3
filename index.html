@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" http-equiv="encoding">
+    <title>D3-Tree</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div id="tree-container">
+        <div id="child-info" style="display: none;">
+            <div>
+                <div>
+                    <input type="text" id="node-text" placeholder="Input child name">
+                </div>
+                <div style="text-align: center;">
+                    <input id="node-img" type="file" name="name" accept="image/*" onchange="loadFile(event)" />
+                    <img id="node-show-img" src="./test.png" height="50" >
+                </div>
+            </div>
+            <div>
+                <button id="add-node">add</button>
+                <button id="update-node">update</button>
+                <button id="cancel-node">cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./dndTree.js"></script>
+    <script type="text/javascript">
+        var loadFile = function(event) {
+            file = event.target.files[0];
+            var output = document.getElementById('node-show-img');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.onload = function() {
+                URL.revokeObjectURL(output.src) // free memory
+            }
+        };
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        }, false);
+    </script>
+</body>
+</html>
