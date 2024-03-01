@@ -1,0 +1,20 @@
+{
+    "name": "flare",
+    "key": "root",
+    "icon": "./user.png",
+    "children": [{
+        "name": "analytics",
+        "icon": "./user.png",
+        "children": [{
+            "name": "cluster"
+        }]
+    }, {
+        "name": "1234",
+        "icon": "./test.png",
+        "children": [{
+            "name": "cluster"
+        }, {
+            "name": "and"
+        }]
+    }]
+}
